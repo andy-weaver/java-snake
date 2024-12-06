@@ -73,8 +73,8 @@ public class GamePanel extends JPanel implements ActionListener {
         return (SCREEN_WIDTH - metrics.stringWidth(text)) / 2;
     }
 
-    private static void setFontOnGameOverScreen(Graphics g, String fontName, int fontSize) {
-        Font font = new Font(fontName, Font.BOLD, fontSize);
+    private static void setFontOnGameOverScreen(Graphics g, int fontSize) {
+        Font font = new Font("Ink Free", Font.BOLD, fontSize);
         g.setFont(font);
     }
 
@@ -266,7 +266,7 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
     private void drawNextStepsText(Graphics g) {
-        setFontOnGameOverScreen(g, "Ink Free", 22);
+        setFontOnGameOverScreen(g, 22);
         String gameOverInstructions = "Press SPACE to RESTART";
         g.drawString(
                 gameOverInstructions,
@@ -282,14 +282,14 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
     private void drawScoreText(Graphics g) {
-        setFontOnGameOverScreen(g, "Ink Free", 25);
+        setFontOnGameOverScreen(g, 25);
         String applesEatenText = "Apples Eaten: " + nApplesEaten;
         g.drawString(applesEatenText, getCenterForText(g, applesEatenText), SCREEN_HEIGHT / 2 + 25);
     }
 
     private void drawGameOverText(Graphics g) {
         String gameOverText = "Game Over";
-        setFontOnGameOverScreen(g, "Ink Free", 75);
+        setFontOnGameOverScreen(g, 75);
         g.drawString(gameOverText, getCenterForText(g, gameOverText), SCREEN_HEIGHT / 2 - 50);
     }
 
